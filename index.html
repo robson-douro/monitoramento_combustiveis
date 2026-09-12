@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Preços</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- COLUNA da ESQUERDA (TÍTULO E FILTROS) -->
+        <div class="search-sidebar">
+            <!-- 1. Título Principal -->
+            <header class="main-header">
+                <h1>Monitoramento Combustíveis</h1>
+                <p class="academic-info">Arquitetura de Dados Relacionais I</p>
+            </header>
+
+            <!-- 2. Campos de Pesquisa (Formulário) -->
+            <div class="filter-box">
+                <form id="formFiltros">
+                    
+                    <div class="field-group">
+                        <label for="bairro">Bairro</label>
+                        <select id="bairro" class="select-field">
+                            <option value="Todos">Todos</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Rio Fundo">Rio Fundo</option>
+                            <option value="Vale das Palmas">Vale das Palmas</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="combustivel">Combustível</label>
+                        <select id="combustivel" class="select-field">
+                            <option value="Todos">Todos</option>
+                            <option value="Gasolina Comum">Gasolina Comum</option>
+                            <option value="Gasolina Aditivada">Gasolina Aditivada</option>
+                            <option value="Etanol">Etanol</option>
+                            <option value="Diesel S-10">Diesel S-10</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="posto">Posto de Combustível</label>
+                        <select id="posto" class="select-field">
+                            <option value="Todos">Todos</option>
+                            <option value="Posto Schueng LTDA">Posto Schueng LTDA</option>
+                            <option value="Posto Vista da Pedra LTDA">Posto Vista da Pedra LTDA</option>
+                            <option value="Posto Vista Alegre LTDA">Posto Vista Alegre LTDA</option>
+                            <option value="Posto Irmãos Venturini LTDA">Posto Irmãos Venturini LTDA</option>
+                            <option value="Auto Posto tesch LTDA">Auto Posto tesch LTDA</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="preco">Preço</label>
+                        <select id="preco" class="select-field">
+                            <option value="Todos">Todos</option>
+                            <option value="Menor">Menor Preço Encontrado</option>
+                            <option value="Maior">Maior Preço Encontrado</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- COLUNA CENTRAL (RESULTADOS DA PESQUISA) -->
+        <div class="results-wrapper">
+            <h2 class="results-heading">Registros Encontrados</h2>
+            <div class="cards-holder">
+                <!-- Inserido dinamicamente pelo JS -->
+            </div>
+        </div>
+
+        <!-- COLUNA DA DIREITA (GRÁFICOS) -->
+        <div class="charts-sidebar">
+            <img src="evolucao_preco_medio_geral.png" alt="Monitoramento de Preços - Gráfico 1">
+            <img src="evolucao_preco_por_posto.png" alt="Monitoramento de Preços - Gráfico 2">
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

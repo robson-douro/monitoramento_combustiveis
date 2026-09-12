@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden !important;
+}
+
+/* CONTAINER PRINCIPAL: Organizado em 3 colunas independentes lado a lado */
+.wrapper {
+    width: 100%;
+    max-width: 1440px; 
+    height: 92vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 25px; 
+}
+
+/* ================================================
+   COLUNA 1 (ESQUERDA): CAMPOS DE PESQUISA E TÍTULO
+   ================================================ */
+.search-sidebar {
+    width: 320px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+}
+
+/* =========================================
+   COLUNA 2 (CENTRO): RESULTADOS DA PESQUISA
+   ========================================= */
+.results-wrapper {
+    flex: 1;
+    min-width: 360px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.results-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cards-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    overflow-y: auto !important;
+    padding-right: 4px;
+}
+
+.cards-holder::-webkit-scrollbar {
+    width: 6px;
+}
+.cards-holder::-webkit-scrollbar-track {
+    background: transparent;
+}
+.cards-holder::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 20px;
+}
+
+/* ESTILIZAÇÕES DOS CARDS */
+.card-item {
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px;
+}
+.card-item h3 {
+    font-size: 0.95rem;
+    color: #1a202c;
+    margin-bottom: 4px;
+}
+.card-address {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-bottom: 8px;
+}
+.card-details {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.badge-fuel, .badge-date, .badge-price {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.badge-fuel { background-color: #e0e7ff; color: #4f46e5; }
+.badge-date { background-color: #edf2f7; color: #4a5568; }
+.badge-price { background-color: #def7ec; color: #03543f; margin-left: auto; }
+
+/* ============================
+   COLUNA 3 (DIREITA): GRÁFICOS
+   ============================ */
+.charts-sidebar {
+    flex: 1.3;
+    min-width: 460px;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
+}
+
+.charts-sidebar img,
+img[src$=".png"], 
+.charts-sidebar picture {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(50vh - 28px) !important;
+    max-height: calc(50vh - 28px) !important;
+    object-fit: contain !important;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+}
+
+/* ELEMENTOS VISUAIS DO FORMULÁRIO */
+.main-header {
+    text-align: center;
+}
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 4px;
+}
+.academic-info {
+    font-size: 0.85rem;
+    color: #718096;
+}
+.filter-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #e2e8f0;
+}
+#formFiltros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.field-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+.field-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.select-field {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: #2d3748;
+    background-color: #f7fafc;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    outline: none;
+    text-align-last: center;
+    cursor: pointer;
+}
+.select-field:focus {
+    border-color: #4f46e5;
+    background-color: #ffffff;
+}
+.btn-submit {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.15);
+}
+.btn-submit:hover {
+    background-color: #3b31d9;
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 1100px) {
+    body {
+        overflow: auto !important;
+    }
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .search-sidebar, .results-wrapper, .charts-sidebar {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: auto;
+    }
+    .charts-sidebar img, img[src$=".png"] {
+        height: auto !important;
+        max-height: none !important;
+    }
+}
